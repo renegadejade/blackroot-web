@@ -14,7 +14,7 @@ import {
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const ToolCard = (props) => (
+export const GetStarted = (props) => (
 <LinkBox maxW="350px" boxShadow="lg" p="5" rounded="2xl">
       <Heading size="lg" my="2">
         <LinkOverlay isExternal={props.external} size="lg" href={props.link}>

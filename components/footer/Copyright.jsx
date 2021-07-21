@@ -1,8 +1,10 @@
 import { Text, Link } from '@chakra-ui/layout'
+import { ArrowForwardIcon, ExternalLinkIcon } from '@chakra-ui/icons'
+import { useColorModeValue } from '@chakra-ui/color-mode'
 import * as React from 'react'
 
 export const Copyright = (props) => (
-  <Text fontSize="sm" {...props}>
-    &copy; {new Date().getFullYear()} <Link isExternal href="https://johnthomas.tech">John Thomas</Link> | <Link isExternal href="https://creativecommons.org/licenses/by/2.0/">CC-BY 2.0</Link>
+  <Text align="center" textTransform="uppercase" color={useColorModeValue('gray.600', 'gray.200')} fontWeight="bold" fontSize="sm" {...props}>
+    DEV <Link color="blue.500" isExternal href="https://johnthomas.tech">John Thomas</Link> AND <Link color="blue.500" isExternal href="#">Contributors</Link> 
   </Text>
 )

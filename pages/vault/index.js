@@ -9,7 +9,7 @@ import {
     Link
   } from '@chakra-ui/react'
   // import Footer from '../components/core/Footer'
-  import { ToolCard } from '../../components/ToolCard'
+  import { ToolCard } from '../../components/GetStarted'
   import Changelog from '../../components/core/changelog'
   import Navbar from '../../components/core/Navbar'
   import { Header } from 'next/dist/lib/load-custom-routes'

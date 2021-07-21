@@ -4,12 +4,12 @@ import * as React from 'react'
 export const Card = (props) => (
   <Box
     bg={useColorModeValue('white', 'gray.700')}
-    py="8"
+    py="4"
     px={{
-      base: '4',
-      md: '10',
+      base: '2',
+      md: '5',
     }}
-    shadow="base"
+    shadow="md"
     rounded={{
       sm: 'lg',
     }}

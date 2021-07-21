@@ -1,6 +1,7 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 import "@fontsource/oswald"
 import "@fontsource/roboto-condensed"
+import "@fontsource/tangerine"
 import "@fontsource/medievalsharp"
 import "@fontsource/material-icons"
 import "@fontsource/material-icons-outlined"

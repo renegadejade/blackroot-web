@@ -19,14 +19,15 @@ import {
     Flex,
     Container,
     Button,
-    Spacer
+    Spacer,
+    useColorModeValue
   } from '@chakra-ui/react'
 // import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
-import Forge1 from '../components/forge/Forge1'
-import Forge2 from '../components/forge/Forge2'
-import Forge3 from '../components/forge/Forge3'
-import Forge4 from '../components/forge/Forge4'
-import Forge5 from '../components/forge/Forge5'
+import Forge1 from '../components/builder/Forge1'
+import Forge2 from '../components/builder/Forge2'
+import Forge3 from '../components/builder/Forge3'
+import Forge4 from '../components/builder/Forge4'
+import Forge5 from '../components/builder/Forge5'
 // import { DarkModeSwitch } from '../components/DarkModeSwitch'
 // import { Header } from '../../components/Header'
 // import { Main } from '../../components/Main'
@@ -70,7 +71,7 @@ const steps = [
 ];
 
 
-function Build() {
+function Create() {
 
   const { nextStep, prevStep, reset, activeStep } = useSteps({
     initialStep: 0,
@@ -99,9 +100,13 @@ function Build() {
   return(
 
     
-    <Flex bg="brand.50" direction="column" height="100%">
-      <Button size="2xl" onClick={createCharacter}>CREATE TEST</Button>
-     <Navbar></Navbar>
+    <Flex bgColor={useColorModeValue("gray.100","gray.800")} direction="column" minH="100vh">
+    <Navbar/>
+  
+
+
+
+
       <Container width="100%" mt="5">
       <Steps bg="brand.900" p="5" rounded="10" colorScheme="brand"  activeStep={activeStep}>
       {steps.map(({ label, content }) => (
@@ -120,10 +125,10 @@ function Build() {
 
     
      
-      <Footer />
-    </Flex>
+      <Footer/>
+  </Flex>
   )
 }
   
-export default Build
+export default Create
   

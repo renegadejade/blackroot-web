@@ -5,6 +5,7 @@ import {
   IconButton,
   Button,
   Stack,
+  HStack,
   Collapse,
   Icon,
   Link,
@@ -15,26 +16,29 @@ import {
   useBreakpointValue,
   useDisclosure,
   Spacer,
-  Container
+  Container,
+  useColorMode,
+  Image
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
+  ChevronRightIcon
 } from '@chakra-ui/icons';
-import { SocialMediaLinks } from '../footer/SocialMediaLinks';
-
+import { SocialMediaLinksHeader } from '../core/SocialMediaLinksHeader';
+import SignUpButton from '../auth/SignUpButton'
+import  DarkModeSwitch from '../DarkModeSwitch'
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-  
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <Box >
       <Flex 
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('gray.50', 'gray.600')}
         color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
+        minH={'80px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -57,14 +61,17 @@ export default function WithSubnavigation() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        
+        <Image maxH="50" src="./images/logo_text.svg" />
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}  >
-          <Text
+          {/* <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
-          </Text>
+            color={useColorModeValue('gray.800', 'white')}
+            fontSize="15"
+            fontWeight="bold"
+            textTransform='uppercase'>
+            BLACKROOT
+          </Text> */}
+           
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10} >
          
@@ -77,27 +84,21 @@ export default function WithSubnavigation() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-            <SocialMediaLinks variant='ghost' display={{ base: 'none', md: 'inline-flex' }}/>
-          {/* <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button> */}
+            <SocialMediaLinksHeader variant='ghost' display={{ base: 'none', md: 'inline-flex' }}/>
+            <DarkModeSwitch display={{ base: 'inline-flex', md: 'inline-flex' }}/>
+            <HamburgerIcon as="button" display={{ base: 'inline-flex', md: 'none' }}/>
           <Button
-            // display={{ base: 'none', md: 'inline-flex' }}
+            color={useColorModeValue('gray.800', 'grey.100')}
+            display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
+            variant={'link'}
+            textTransform={'uppercase'}
+            href={'#'}>
             Sign In
           </Button>
+          
+          <SignUpButton />
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
@@ -120,8 +121,10 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
+                
                 href={navItem.href ?? '#'}
                 fontSize={'sm'}
+                textTransform={'uppercase'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -162,12 +165,12 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('gray.50', 'gray.900') }}>
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'gray.400' }}
             fontWeight={500}>
             {label}
           </Text>
@@ -181,7 +184,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'gray.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -197,6 +200,10 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <HStack align="center">
+      <Button>Sign In</Button>
+      <Button>Sign In</Button>
+      </HStack>
     </Stack>
   );
 };
@@ -244,6 +251,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
               <Link key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>
+            
             ))}
         </Stack>
       </Collapse>
@@ -260,26 +268,63 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Tools',
+    label: 'Heroes',
     children: [
       {
-        label: 'Character Creator',
-        subLabel: 'Start your journey',
-        href: '#',
+        label: 'Create',
+        subLabel: 'Build a new Player-hero',
+        href: '/create',
       },
       {
         label: 'Vault',
-        subLabel: 'View and manage your characters',
-        href: '#',
+        subLabel: 'View and manage your Player-heroes',
+        href: '/vault',
+      }
+    ],
+  },
+  {
+    label: 'Tools',
+    children: [
+      {
+        label: 'Bestiary',
+        subLabel: 'Curated homebrew adversaries',
+        href: '/bestiary',
+      },
+      {
+        label: 'Name Generator',
+        subLabel: 'Names for every heroic culture',
+        href: '/name-generator',
+      },
+      {
+        label: 'Treasure',
+        subLabel: 'Generate treasure on the fly',
+        href: '/treasure',
       }
     ],
   },
   {
     label: 'Resources',
-    href: '/resources',
-  },
-  {
-    label: 'Changelog',
-    href: '/about',
-  },
+    children: [
+      {
+        label: 'THE ONE RING™',
+        subLabel: 'Purchase the one game to rule them all',
+        href: '#',
+      },
+      {
+        label: 'Support',
+        subLabel: 'Get help with Blackroot',
+        href: '/support',
+      },
+      {
+        label: 'Changelog',
+        subLabel: 'New features and bug fixes',
+        href: '/changelog',
+      },
+      {
+        label: 'API Documenation',
+        subLabel: 'Develop your own tools',
+        href: '/docs',
+      }
+    ],
+  }
 ];
