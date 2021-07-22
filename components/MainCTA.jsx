@@ -41,7 +41,7 @@ function MainCTA(){
               The Road Goes Ever On
           </Heading>
           <Text color={useColorModeValue("blackroot.red", "sauron.white")} mt="4" fontSize="lg" fontWeight="bold">
-            Create your first THE ONE RING™ hero.
+            Create a THE ONE RING™ hero.
           </Text>
           <CTAButton text="Start Your Adventure"/>
           <Text mt="4"  fontWeight="semibold" color={useColorModeValue("blackroot.red", "sauron.white")}>Nasty disturbing uncomfortable things! Make you late for dinner!</Text>

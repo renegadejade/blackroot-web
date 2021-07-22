@@ -18,7 +18,8 @@ import {
   Spacer,
   Container,
   useColorMode,
-  Image
+  Image,
+  Heading
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -29,6 +30,9 @@ import {
 import { SocialMediaLinksHeader } from '../core/SocialMediaLinksHeader';
 import SignUpButton from '../auth/SignUpButton'
 import  DarkModeSwitch from '../DarkModeSwitch'
+
+
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
@@ -61,8 +65,10 @@ export default function WithSubnavigation() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
+       
+        {/* <Text textTransform="uppercase" fontWeight="black">Blackroot Vale</Text> */}
+        <Flex align="center" flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}  >
         <Image maxH="50" src={useColorModeValue("./images/logo_text_light.svg", "./images/logo_text_dark.svg")} />
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}  >
           {/* <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             color={useColorModeValue('gray.800', 'white')}

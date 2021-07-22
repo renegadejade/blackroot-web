@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Button, useDisclosure, useColorModeValue, useColorMode } from '@chakra-ui/react'
-import { CreateAccount } from './CreateAccount'
+import { Button, useDisclosure, useColorModeValue, Box } from '@chakra-ui/react'
+import CreateAccount from './CreateAccount'
 import {
     Modal,
     ModalOverlay,
@@ -14,7 +14,7 @@ import {
 function SignUpButton(){
     const { isOpen, onOpen, onClose } = useDisclosure()
     return(
-        <>
+      <>
         <Button
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
@@ -30,7 +30,7 @@ function SignUpButton(){
             Sign Up
         </Button>
 
-<Modal id="signup" isOpen={isOpen} onClose={onClose} >
+        <Modal isOpen={isOpen} onClose={onClose} >
 <ModalOverlay/>
 <ModalContent bg={useColorModeValue("blackroot.light", "sauron.medium")} >
   <ModalCloseButton color={useColorModeValue("black", "black")}/>
@@ -39,7 +39,10 @@ function SignUpButton(){
   </ModalBody>
 </ModalContent>
 </Modal>
-</>
+
+        </>
+
+
     )
 }
 export default SignUpButton

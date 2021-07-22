@@ -31,7 +31,7 @@ function CTAButton(props){
 
           <Modal id="disclaimer" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay/>
-        <ModalContent bg={useColorModeValue("blackroot.light", "sauron.medium")}>
+        <ModalContent bg={useColorModeValue("blackroot.ivory", "sauron.medium")}>
         <ModalHeader color={useColorModeValue("blackroot.dark", "sauron.white")}>DISCLAIMER</ModalHeader>
           <ModalCloseButton color="black"/>
           <ModalBody>
@@ -39,12 +39,12 @@ function CTAButton(props){
           </ModalBody>
           <ModalFooter>
           <SimpleGrid mt="6" columns={2} spacing="3" mx="auto">
-            <Button bg={useColorModeValue("blackroot.red-dark","sauron.dark")} color={useColorModeValue("blackroot.light","sauron.white")} textTransform="uppercase">Create Account</Button>
-            <Button as="a" cursor="pointer" href="/create" bg={useColorModeValue("blackroot.red-dark","sauron.dark")} color={useColorModeValue("blackroot.light","sauron.white")} textTransform="uppercase">Continue</Button>
+            <Button bg={useColorModeValue("blackroot.red-dark","sauron.dark")} color={useColorModeValue("blackroot.white","sauron.white")} textTransform="uppercase">Create Account</Button>
+            <Button as="a" cursor="pointer" href="/create" bg={useColorModeValue("blackroot.red-dark","sauron.dark")} color={useColorModeValue("blackroot.white","sauron.white")} textTransform="uppercase">Continue</Button>
           </SimpleGrid>
             </ModalFooter>
-            <ModalFooter>
-            <Text color={useColorModeValue("blackroot.dark", "sauron.white")} fontSize="sm" as="span"><Link>Already have an account?</Link></Text>
+            <ModalFooter >
+            <Text mx="auto" color={useColorModeValue("blackroot.dark", "sauron.white")} fontSize="sm" as="span"><Link>Already have an account?</Link></Text>
 
             </ModalFooter>
       </ModalContent>
