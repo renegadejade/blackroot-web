@@ -6,7 +6,7 @@ import MainCTA from '../components/MainCTA'
 function Home() {
   
   return (
-    <Flex bgColor={useColorModeValue("gray.100","gray.800")} direction="column" minH="100vh">
+    <Flex bgColor={useColorModeValue("blackroot.ivory","sauron.dark")} direction="column" minH="100vh">
       <Navbar/>
       <MainCTA/>
       <Footer/>

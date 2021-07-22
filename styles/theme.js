@@ -9,17 +9,20 @@ const config = {
 const fonts = { mono: `'Menlo', monospace`}
 
 const colors = {
-  brand: {
-    50: "#EAE0D4",
-    100: "#E1CFC4",
-    200: "#D9BEB5",
-    300: "#D0ADA5",
-    400: "#C89C96",
-    500: "#BF8B86",
-    600: "#B77A77",
-    700: "#AE6967",
-    800: "#A65858",
-    900: "#9D4748"
+  blackroot: {
+    "white": "#F9F9F9",
+    "ivory": "#F2EDE3",
+    "red": "#AF5654",
+    "red-dark": "#8B4341",
+    "light": "#CCCCCC",
+    "dark": "#2D2D2D"
+  },
+  sauron: {
+    "white": "#F5F5F5",
+    "light": "#D5D6D7",
+    "medium": "#777B7E",
+    "dark": "#444648",
+    "red": "#EF1D00"
   }
 }
 

@@ -4,11 +4,11 @@ import * as React from 'react'
 export const DividerWithText = (props) => {
   const { children, ...flexProps } = props
   return (
-    <Flex align="center" color="gray.300" {...flexProps}>
+    <Flex align="center" color="sauron.dark" {...flexProps}>
       <Box flex="1">
         <Divider borderColor="currentcolor" />
       </Box>
-      <Text as="span" px="3" color={useColorModeValue('gray.600', 'gray.400')} fontWeight="medium">
+      <Text as="span" px="3" color={useColorModeValue('gray.600', 'sauron.dark')} fontWeight="bold">
         {children}
       </Text>
       <Box flex="1">

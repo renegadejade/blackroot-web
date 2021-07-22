@@ -36,8 +36,8 @@ export default function WithSubnavigation() {
   return (
     <Box >
       <Flex 
-        bg={useColorModeValue('gray.50', 'gray.600')}
-        color={useColorModeValue('gray.600', 'white')}
+        bg={useColorModeValue('blackroot.red', 'sauron.medium')}
+        color={useColorModeValue('blackroot.ivory', 'white')}
         minH={'80px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -61,7 +61,7 @@ export default function WithSubnavigation() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Image maxH="50" src="./images/logo_text.svg" />
+        <Image maxH="50" src={useColorModeValue("./images/logo_text_light.svg", "./images/logo_text_dark.svg")} />
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}  >
           {/* <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
@@ -88,7 +88,7 @@ export default function WithSubnavigation() {
             <DarkModeSwitch display={{ base: 'inline-flex', md: 'inline-flex' }}/>
             <HamburgerIcon as="button" display={{ base: 'inline-flex', md: 'none' }}/>
           <Button
-            color={useColorModeValue('gray.800', 'grey.100')}
+            color={useColorModeValue('blackroot.ivory', 'sauron.white')}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
@@ -109,8 +109,8 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue('blackroot.white', 'black')
+  const linkHoverColor = useColorModeValue('blackroot.red-dark', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (

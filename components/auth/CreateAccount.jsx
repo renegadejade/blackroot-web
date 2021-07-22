@@ -26,32 +26,32 @@ export const CreateAccount = () => (
       lg: '4',
     }}
   >
-    <Box color={useColorModeValue('gray.600', 'gray.400')} maxW="md" mx="auto">
+    <Box color={useColorModeValue('gray.600', 'black')} maxW="md" mx="auto">
       <Center>
-      <Image maxH="100" my="2" src="./images/logo_text.svg" />
+      <Image maxH="100" my="2" src="./images/logo_stone_dark.svg" />
       </Center>
    
-      <Heading my="3" align="center" fontSize="xl" textTransform="uppercase">Welcome to Blackroot</Heading>
+      <Heading color={useColorModeValue("gray.400", "black")} my="3" align="center" fontSize="xl" textTransform="uppercase">Welcome to Blackroot</Heading>
  
         <LoginForm buttontext="Create Account"/>
         <DividerWithText mt="6">or continue with</DividerWithText>
         <SimpleGrid mt="6" columns={3} spacing="3">
-          <Button color="currentColor" variant="outline">
+          <Button color={useColorModeValue("gray.400", "sauron.white")} bg={useColorModeValue("gray.400", "sauron.dark")} variant="outline">
             <VisuallyHidden>Login with Google</VisuallyHidden>
             <FaGoogle />
           </Button>
-          <Button color="currentColor" variant="outline">
+          <Button color={useColorModeValue("gray.400", "sauron.white")} bg={useColorModeValue("gray.400", "sauron.dark")} variant="outline">
             <VisuallyHidden>Login with Apple</VisuallyHidden>
             <FaApple />
           </Button>
-          <Button color="currentColor" variant="outline">
+          <Button color={useColorModeValue("gray.400", "sauron.white")} bg={useColorModeValue("gray.400", "sauron.dark")} variant="outline">
             <VisuallyHidden>Login with Github</VisuallyHidden>
             <FaGithub />
           </Button>
           
         </SimpleGrid>
         <Text mt="4" mb="2" align="center" maxW="md" fontWeight="medium">
-        <Text fontSize="sm" as="span"><Link>Already have an account?</Link></Text>
+        <Text fontSize="sm" as="span"><Link color={useColorModeValue("gray.400", "sauron.black")} >Already have an account?</Link></Text>
       </Text>
       
     </Box>

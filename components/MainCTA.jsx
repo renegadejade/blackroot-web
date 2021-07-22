@@ -32,18 +32,21 @@ function MainCTA(){
           textAlign="center"
         >
           <Heading
-              color={useColorModeValue("gray.700", "gray.100")}
+              color={useColorModeValue("blackroot.red", "sauron.white")}
               as="h2"
               size="2xl"
               fontWeight="extrabold"
               letterSpacing="tight"
               textTransform="uppercase">
-              Ready for Adventure?
+              The Road Goes Ever On
           </Heading>
-          <Text color={useColorModeValue("gray.700", "gray.100")} mt="4" fontSize="lg">
+          <Text color={useColorModeValue("blackroot.red", "sauron.white")} mt="4" fontSize="lg" fontWeight="bold">
             Create your first THE ONE RING™ hero.
           </Text>
-          <CTAButton/>
+          <CTAButton text="Start Your Adventure"/>
+          <Text mt="4"  fontWeight="semibold" color={useColorModeValue("blackroot.red", "sauron.white")}>Nasty disturbing uncomfortable things! Make you late for dinner!</Text>
+          <Text mt="1"  fontWeight="semibold" color={useColorModeValue("blackroot.red", "sauron.white")}>-Bilbo, to Gandalf (J.R.R. Tolkien)</Text>
+
           {/* <Button
             textTransform="uppercase"
             mt="8"

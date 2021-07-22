@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, useDisclosure } from '@chakra-ui/react'
+import { Button, useDisclosure, useColorModeValue, useColorMode } from '@chakra-ui/react'
 import { CreateAccount } from './CreateAccount'
 import {
     Modal,
@@ -20,22 +20,22 @@ function SignUpButton(){
             fontSize={'sm'}
             fontWeight={600}
             textTransform={'uppercase'}
-            color={'gray.800'}
-            bg={'gray.400'}
+            color={useColorModeValue('blackroot.ivory', 'black')}
+            bg={useColorModeValue('blackroot.red-dark', 'sauron.red')}
             href={'#'}
             onClick={onOpen}
             _hover={{
-              bg: 'gray.100',
+              bg: 'blackroot.ivory',
             }}>
             Sign Up
         </Button>
 
-<Modal isOpen={isOpen} onClose={onClose}>
+<Modal id="signup" isOpen={isOpen} onClose={onClose} >
 <ModalOverlay/>
-<ModalContent>
-  <ModalCloseButton color="gray.500"/>
-  <ModalBody>
-    <CreateAccount/>
+<ModalContent bg={useColorModeValue("blackroot.light", "sauron.medium")} >
+  <ModalCloseButton color={useColorModeValue("black", "black")}/>
+  <ModalBody >
+    <CreateAccount />
   </ModalBody>
 </ModalContent>
 </Modal>
